@@ -1,27 +1,59 @@
 <!doctype html>
 <html lang="hi">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DJ Kanwar Brothers & Tent Service | Korba</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#080f25;color:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#080f25;color:#fff;line-height:1.5}
 header{background:#06152f;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 header b{font-size:20px;color:#ffd21a}.top{font-size:14px}.hero img{width:100%;height:auto;display:block}
-section{padding:32px 6%}h2{color:#ffd21a}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
+section{padding:30px 6%}h2{color:#ffd21a}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
 .card{background:#142344;padding:18px;border:1px solid #34466b;border-radius:12px}
-.btn{display:inline-block;background:#16bd58;color:white;text-decoration:none;font-weight:bold;padding:13px 20px;border-radius:30px;margin:7px 7px 0 0}
+.btn{display:inline-block;background:#16bd58;color:white;text-decoration:none;font-weight:bold;padding:13px 20px;border:0;border-radius:30px;margin:7px 7px 0 0;cursor:pointer}
+form{max-width:680px;background:#142344;border:1px solid #34466b;border-radius:14px;padding:20px}
+label{display:block;margin:12px 0 5px;font-weight:bold}input,select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #8b9bb8;font-size:16px}
+small{color:#cbd5e1}.checkrow{display:flex;gap:12px;flex-wrap:wrap}.checkrow label{font-weight:normal;display:flex;align-items:center;gap:6px}.checkrow input{width:auto}
 footer{background:#06152f;padding:24px 6%;text-align:center;color:#ffe16a}
-</style></head><body>
+</style>
+</head>
+<body>
 <header><b>DJ Kanwar Brothers & Tent Service</b><span class="top">ठाकुर देव चौक, उड़ता, पाली, कोरबा | 9131480247</span></header>
-<div class="hero"><img src="banner.png.jpeg" alt="DJ, tent and stage decoration"></div>
+<div class="hero"><img src="banner.png.jpeg" alt="DJ, टेंट और स्टेज डेकोरेशन"></div>
 <section><h2>हमारी सेवाएँ</h2><div class="grid">
 <div class="card"><h3>🔊 DJ साउंड और लाइट</h3><p>शादी, बारात और सभी आयोजनों के लिए।</p></div>
 <div class="card"><h3>⛺ टेंट डेकोरेशन</h3><p>कार्यक्रम के अनुसार टेंट और बैठक व्यवस्था।</p></div>
 <div class="card"><h3>🌸 स्टेज डेकोरेशन</h3><p>शादी और विशेष अवसरों के लिए आकर्षक सजावट।</p></div>
 <div class="card"><h3>🌿 मंडप डेकोरेशन</h3><p>विवाह मंडप और समारोह की सजावट।</p></div>
 </div></section>
-<section><h2>बुकिंग पूछताछ</h2><p>बुकिंग के लिए WhatsApp पर संपर्क करें। तारीख और उपलब्धता बातचीत के बाद पक्की होगी।</p>
-<a class="btn" href="https://wa.me/919131480247?text=नमस्ते,%20मुझे%20टेंट%20और%20DJ%20की%20बुकिंग%20करनी%20है।">WhatsApp से बुकिंग करें</a>
-<a class="btn" href="tel:9131480247">कॉल करें: 9131480247</a></section>
+<section id="booking"><h2>ऑनलाइन बुकिंग / ऑर्डर फॉर्म</h2>
+<p>नीचे जानकारी भरें। सबमिट करने पर आपकी बुकिंग की जानकारी WhatsApp पर खुलेगी। बुकिंग तारीख और उपलब्धता की पुष्टि बातचीत के बाद होगी।</p>
+<form id="bookingForm">
+<label for="customer">आपका नाम *</label><input id="customer" required placeholder="अपना पूरा नाम">
+<label for="mobile">मोबाइल नंबर *</label><input id="mobile" required type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकों का मोबाइल नंबर">
+<label for="eventDate">कार्यक्रम की तारीख *</label><input id="eventDate" required type="date">
+<label for="place">कार्यक्रम का स्थान / गाँव *</label><input id="place" required placeholder="गाँव, जगह या पूरा पता">
+<label>कौन-सी सेवा चाहिए? *</label>
+<div class="checkrow">
+<label><input type="checkbox" name="service" value="DJ साउंड"> DJ साउंड</label>
+<label><input type="checkbox" name="service" value="टेंट"> टेंट</label>
+<label><input type="checkbox" name="service" value="स्टेज डेकोरेशन"> स्टेज डेकोरेशन</label>
+<label><input type="checkbox" name="service" value="मंडप डेकोरेशन"> मंडप डेकोरेशन</label>
+</div>
+<label for="details">अन्य जानकारी</label><textarea id="details" rows="3" placeholder="जैसे मेहमानों की संख्या, कार्यक्रम का समय आदि"></textarea>
+<button class="btn" type="submit">WhatsApp पर बुकिंग भेजें</button>
+</form>
+<p><small>नोट: यह फॉर्म जानकारी सीधे आपके WhatsApp संदेश में तैयार करता है; वेबसाइट पर जानकारी सेव नहीं होती।</small></p>
+<a class="btn" href="tel:9131480247">सीधे कॉल करें: 9131480247</a>
+</section>
 <footer>DJ Kanwar Brothers & Tent Service • ठाकुर देव चौक, उड़ता, पाली, कोरबा</footer>
+<script>
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+e.preventDefault();
+const services=[...document.querySelectorAll('input[name="service"]:checked')].map(x=>x.value);
+if(!services.length){alert('कृपया कम से कम एक सेवा चुनें।');return;}
+const msg=`नमस्ते DJ Kanwar Brothers & Tent Service,%0Aमुझे बुकिंग करनी है।%0Aनाम: ${encodeURIComponent(document.getElementById('customer').value)}%0Aमोबाइल: ${encodeURIComponent(document.getElementById('mobile').value)}%0Aकार्यक्रम की तारीख: ${encodeURIComponent(document.getElementById('eventDate').value)}%0Aस्थान: ${encodeURIComponent(document.getElementById('place').value)}%0Aसेवाएँ: ${encodeURIComponent(services.join(', '))}%0Aअन्य जानकारी: ${encodeURIComponent(document.getElementById('details').value)}`;
+window.open('https://wa.me/919131480247?text='+msg,'_blank');
+});
+</script>
 </body></html>
