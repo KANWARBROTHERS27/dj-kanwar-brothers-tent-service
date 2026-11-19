@@ -27,11 +27,12 @@ footer{background:#06152f;padding:24px 6%;text-align:center;color:#ffe16a}
 <div class="card"><h3>🌿 मंडप डेकोरेशन</h3><p>विवाह मंडप और समारोह की सजावट।</p></div>
 </div></section>
 <section id="booking"><h2>ऑनलाइन बुकिंग / ऑर्डर फॉर्म</h2>
-<p>नीचे जानकारी भरें। सबमिट करने पर आपकी बुकिंग की जानकारी WhatsApp पर खुलेगी। बुकिंग तारीख और उपलब्धता की पुष्टि बातचीत के बाद होगी।</p>
+<p>नीचे जानकारी भरें। सबमिट करने पर WhatsApp में आपके लिए संदेश खुलेगा। भेजने के बाद आप और ग्राहक उसी WhatsApp चैट में बात कर सकते हैं। बुकिंग तारीख और उपलब्धता की पुष्टि बातचीत के बाद होगी।</p>
 <form id="bookingForm">
 <label for="customer">आपका नाम *</label><input id="customer" required placeholder="अपना पूरा नाम">
 <label for="mobile">मोबाइल नंबर *</label><input id="mobile" required type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकों का मोबाइल नंबर">
 <label for="eventDate">कार्यक्रम की तारीख *</label><input id="eventDate" required type="date">
+<label for="eventTime">कार्यक्रम का समय *</label><input id="eventTime" required type="time">
 <label for="place">कार्यक्रम का स्थान / गाँव *</label><input id="place" required placeholder="गाँव, जगह या पूरा पता">
 <label>कौन-सी सेवा चाहिए? *</label>
 <div class="checkrow">
@@ -39,11 +40,13 @@ footer{background:#06152f;padding:24px 6%;text-align:center;color:#ffe16a}
 <label><input type="checkbox" name="service" value="टेंट"> टेंट</label>
 <label><input type="checkbox" name="service" value="स्टेज डेकोरेशन"> स्टेज डेकोरेशन</label>
 <label><input type="checkbox" name="service" value="मंडप डेकोरेशन"> मंडप डेकोरेशन</label>
+<label><input type="checkbox" name="service" value="गेट डेकोरेशन"> गेट डेकोरेशन</label>
+<label><input type="checkbox" name="service" value="जनरेटर"> जनरेटर</label>
 </div>
-<label for="details">अन्य जानकारी</label><textarea id="details" rows="3" placeholder="जैसे मेहमानों की संख्या, कार्यक्रम का समय आदि"></textarea>
+<label for="details">अन्य जानकारी</label><textarea id="details" rows="3" placeholder="जैसे मेहमानों की संख्या या अन्य जरूरत"></textarea>
 <button class="btn" type="submit">WhatsApp पर बुकिंग भेजें</button>
 </form>
-<p><small>नोट: यह फॉर्म जानकारी सीधे आपके WhatsApp संदेश में तैयार करता है; वेबसाइट पर जानकारी सेव नहीं होती।</small></p>
+<p><small>नोट: वेबसाइट पर जानकारी सेव नहीं होती। WhatsApp खुलने पर ग्राहक को संदेश भेजने के लिए Send दबाना होगा। इसके बाद जवाब उसी WhatsApp चैट में मिलेगा।</small></p>
 <a class="btn" href="tel:9131480247">सीधे कॉल करें: 9131480247</a>
 </section>
 <footer>DJ Kanwar Brothers & Tent Service • ठाकुर देव चौक, उड़ता, पाली, कोरबा</footer>
@@ -52,8 +55,9 @@ document.getElementById('bookingForm').addEventListener('submit',function(e){
 e.preventDefault();
 const services=[...document.querySelectorAll('input[name="service"]:checked')].map(x=>x.value);
 if(!services.length){alert('कृपया कम से कम एक सेवा चुनें।');return;}
-const msg=`नमस्ते DJ Kanwar Brothers & Tent Service,%0Aमुझे बुकिंग करनी है।%0Aनाम: ${encodeURIComponent(document.getElementById('customer').value)}%0Aमोबाइल: ${encodeURIComponent(document.getElementById('mobile').value)}%0Aकार्यक्रम की तारीख: ${encodeURIComponent(document.getElementById('eventDate').value)}%0Aस्थान: ${encodeURIComponent(document.getElementById('place').value)}%0Aसेवाएँ: ${encodeURIComponent(services.join(', '))}%0Aअन्य जानकारी: ${encodeURIComponent(document.getElementById('details').value)}`;
-window.open('https://wa.me/919131480247?text='+msg,'_blank');
+const fields={customer:document.getElementById('customer').value,mobile:document.getElementById('mobile').value,date:document.getElementById('eventDate').value,time:document.getElementById('eventTime').value,place:document.getElementById('place').value,services:services.join(', '),details:document.getElementById('details').value};
+const message=`नमस्ते DJ Kanwar Brothers & Tent Service,\nमुझे बुकिंग करनी है।\nनाम: ${fields.customer}\nमोबाइल: ${fields.mobile}\nकार्यक्रम की तारीख: ${fields.date}\nकार्यक्रम का समय: ${fields.time}\nस्थान: ${fields.place}\nसेवाएँ: ${fields.services}\nअन्य जानकारी: ${fields.details}`;
+window.open('https://wa.me/919131480247?text='+encodeURIComponent(message),'_blank');
 });
 </script>
 </body></html>
