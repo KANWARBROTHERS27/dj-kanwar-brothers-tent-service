@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DJ Kanwar Brothers & Tent Service | Udata, Korba</title>
+<meta name="description" content="शादी, जन्मदिन और सभी कार्यक्रमों के लिए टेंट, DJ, स्टेज डेकोरेशन और लाइटिंग बुक करें।">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#222;background:#fffaf3;line-height:1.6}
+header{background:#24143d;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+header strong{font-size:20px}.hero{padding:64px 7%;background:linear-gradient(120deg,#3b1e59,#8b3d6e);color:white}
+.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.15;margin:0 0 14px}.hero p{font-size:18px;max-width:650px}
+.btn{display:inline-block;background:#ffbd45;color:#24143d;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold;margin:8px 8px 0 0}
+section{padding:38px 7%}h2{color:#3b1e59}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 3px 14px #00000012}.placeholder{height:130px;border-radius:9px;background:#eee2f3;display:grid;place-items:center;color:#68477c;font-size:17px;font-weight:bold}
+label{display:block;margin:10px 0 4px}input,select,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:7px;font:inherit}
+footer{background:#24143d;color:white;padding:25px 7%}small{color:#ddd}
+</style>
+</head>
+<body>
+<header><strong>DJ Kanwar Brothers & Tent Service</strong><span>ठाकुर देव चौक, उड़ता, पाली, कोरबा</span></header>
+<div class="hero">
+<h1>आपके हर कार्यक्रम को बनाएं यादगार!</h1>
+<p>शादी-विवाह, जन्मदिन, सामाजिक कार्यक्रम और अन्य आयोजनों के लिए टेंट, DJ साउंड, स्टेज डेकोरेशन और लाइटिंग की बुकिंग करें।</p>
+<a class="btn" href="https://wa.me/919131480247?text=नमस्ते,%20मुझे%20टेंट%20और%20DJ%20की%20बुकिंग%20करनी%20है।">WhatsApp से बुकिंग करें</a>
+<a class="btn" href="#services">हमारी सेवाएँ देखें</a>
+</div>
+<section id="services"><h2>हमारी सेवाएँ</h2><div class="grid">
+<div class="card"><div class="placeholder">टेंट व्यवस्था</div><h3>टेंट और बैठक व्यवस्था</h3><p>कार्यक्रम के अनुसार टेंट और बैठने की व्यवस्था।</p></div>
+<div class="card"><div class="placeholder">DJ साउंड</div><h3>DJ साउंड सिस्टम</h3><p>शादी, बारात और समारोह के लिए DJ साउंड।</p></div>
+<div class="card"><div class="placeholder">स्टेज डेकोरेशन</div><h3>स्टेज डेकोरेशन</h3><p>शादी और अन्य आयोजनों के लिए सुंदर स्टेज सजावट।</p></div>
+<div class="card"><div class="placeholder">लाइटिंग</div><h3>लाइट और सजावट</h3><p>कार्यक्रम के अनुसार लाइटिंग और सजावट।</p></div>
+</div></section>
+<section><h2>बुकिंग पूछताछ</h2><p>नीचे जानकारी भरकर WhatsApp पर भेजें। बुकिंग की पुष्टि बातचीत के बाद होगी।</p>
+<form id="booking">
+<div class="grid"><div><label>आपका नाम</label><input id="name" required placeholder="अपना नाम"></div>
+<div><label>मोबाइल नंबर</label><input id="phone" required inputmode="tel" placeholder="मोबाइल नंबर"></div>
+<div><label>कार्यक्रम</label><select id="event"><option>शादी-विवाह</option><option>जन्मदिन</option><option>सामाजिक कार्यक्रम</option><option>अन्य</option></select></div>
+<div><label>कार्यक्रम की तारीख</label><input id="date" type="date"></div></div>
+<label>क्या सेवा चाहिए?</label><textarea id="details" rows="3" placeholder="टेंट, DJ, स्टेज डेकोरेशन आदि"></textarea>
+<button class="btn" type="submit" style="border:0;cursor:pointer">बुकिंग WhatsApp पर भेजें</button>
+</form></section>
+<section><h2>संपर्क करें</h2><p>📞 9131480247</p><p>📍 ठाकुर देव चौक, उड़ता, पाली, कोरबा</p><a class="btn" href="tel:9131480247">कॉल करें</a><a class="btn" href="https://wa.me/919131480247">WhatsApp करें</a></section>
+<footer><strong>DJ Kanwar Brothers & Tent Service</strong><br><small>आपके हर उत्सव का भरोसेमंद साथी।</small></footer>
+<script>
+document.getElementById('booking').addEventListener('submit',function(e){
+e.preventDefault();
+const v=id=>document.getElementById(id).value;
+const msg=`नमस्ते, मुझे बुकिंग करनी है।%0Aनाम: ${encodeURIComponent(v('name'))}%0Aमोबाइल: ${encodeURIComponent(v('phone'))}%0Aकार्यक्रम: ${encodeURIComponent(v('event'))}%0Aतारीख: ${encodeURIComponent(v('date'))}%0Aसेवा/जानकारी: ${encodeURIComponent(v('details'))}`;
+location.href='https://wa.me/919131480247?text='+msg;
+});
+</script>
+</body></html>
